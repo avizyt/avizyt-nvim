@@ -1,4 +1,4 @@
-# avizyt-nvim/
+# Avizyt Neovim (NvChad Based)
 
 <a href="https://dotfyle.com/avizyt/avizyt-nvim"><img src="https://dotfyle.com/avizyt/avizyt-nvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/avizyt/avizyt-nvim"><img src="https://dotfyle.com/avizyt/avizyt-nvim/badges/leaderkey?style=flat" /></a>

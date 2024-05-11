@@ -2,19 +2,26 @@ local lazy = require "lazy"
 
 local plugins = {
   {
-    "stevearc/dressing.nvim",
+    'goolord/alpha-nvim',
     -- lazy = false,
-    -- config = function ()
-    --   return require "configs.dressing"
-    -- end,
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  },
+  {
+    "stevearc/dressing.nvim",
+    lazy = true,
+    config = function ()
+      return require "configs.dressing"
+    end,
     opts = {}
   },
   {
     "stevearc/overseer.nvim",
-    -- lazy=false,
-    -- config = function ()
-    --   return require "configs.overseer"
-    -- end,
+    lazy= true,
+    config = function ()
+      return require "configs.overseer"
+    end,
     opts = {},
   },
   {

@@ -2,7 +2,11 @@ local ft = require("guard.filetype")
 
 ft('typescript,javascript,typescriptreact'):fmt('prettier')
 ft('python'):fmt('ruff')
+ft('lua'):fmt('stylua')
 ft('rust'):fmt('rust_analyzer')
+ft('c,cpp'):fmt('clang-format'):lint('clang-tidy')
+ft('*'):lint('codespell')
+
 
 
 require('guard').setup({

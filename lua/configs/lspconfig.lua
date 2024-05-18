@@ -1,10 +1,10 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "ruff", "rust_analyzer", "clangd" }
+local servers = { "html", "cssls", "rust_analyzer", "clangd" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -18,7 +18,7 @@ end
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name(0)},
+    arguments = { vim.api.nvim_buf_get_name(0) },
   }
   vim.lsp.buf.execute_command(params)
 end
@@ -46,16 +46,27 @@ lspconfig.tsserver.setup {
   init_options = {
     preferences = {
       disableSuggestions = true,
-    }
+    },
   },
   commands = {
-    OrganizeImports ={
+    OrganizeImports = {
       organize_imports,
       description = "Organize Imports",
-    }
-  }
+    },
+  },
 }
 
+-- ruff-lsp
+-- lspconfig.ruff_lsp.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   init_options = {
+--     settings = {
+--       args = {},
+--     },
+--   },
+-- }
+--
 -- pyright
 lspconfig.pyright.setup {
   on_attach = on_attach,
@@ -66,13 +77,12 @@ lspconfig.pyright.setup {
         disableOrganizeImport = true, --using ruff
       },
 
-      python = {
-        analysis = {
-          ignore = {'*'},
-          typeCheckingMode = 'on', -- Using mypy
-        },
-      },
+      -- python = {
+      --   analysis = {
+      --     ignore = {'*'},
+      --     typeCheckingMode = 'on', -- Using mypy
+      --   },
+      -- },
     },
   },
 }
-

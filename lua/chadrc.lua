@@ -5,21 +5,19 @@
 local M = {}
 
 M.ui = {
-	theme = "mountain",
+	theme = "kanagawa",
 
 	cmp = {
 		icons = true,
 		lspkind_text = true,
 		style = "default", -- default/flat_light/flat_dark/atom/atom_colored
 	  },
-	  
 	telescope = {
 		style = "bordered"
 	},
 
 
   nvdash = {
-	
 	header = {
 		"──██─█╔══╗██▀▄╔══╗██─█── ██▀▄╔══╗██─█──",
 		"──▌▐▀█║╔╗║▌▐▀▀║╚╝║▌▐─█── ▌▐─█║╔╗║▌▐─█──",

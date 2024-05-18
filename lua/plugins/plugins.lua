@@ -2,24 +2,16 @@ local lazy = require "lazy"
 
 local plugins = {
   {
-    'goolord/alpha-nvim',
+    "goolord/alpha-nvim",
     -- lazy = false,
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-  },
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-    config = function ()
-      return require "configs.dressing"
+    config = function()
+      require("alpha").setup(require("alpha.themes.dashboard").config)
     end,
-    opts = {}
   },
   {
     "stevearc/overseer.nvim",
-    lazy= true,
-    config = function ()
+    lazy = true,
+    config = function()
       return require "configs.overseer"
     end,
     opts = {},
@@ -30,7 +22,7 @@ local plugins = {
     dependencies = {
       "nvimdev/guard-collection",
     },
-    config = function ()
+    config = function()
       return require "configs.guard"
     end,
   },
@@ -46,9 +38,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "eslint-lsp",
-        "typescript-language-server"
-      }
-    }
+        "typescript-language-server",
+      },
+    },
   },
 }
 return plugins

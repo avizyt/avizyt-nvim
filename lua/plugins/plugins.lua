@@ -1,16 +1,13 @@
-local lazy = require "lazy"
-
 local plugins = {
   {
-    "goolord/alpha-nvim",
-    -- lazy = false,
+    "karb94/neoscroll.nvim",
+    lazy = false,
     config = function()
-      require("alpha").setup(require("alpha.themes.dashboard").config)
+      require "configs.neoscroll"
     end,
   },
   {
     "stevearc/overseer.nvim",
-    lazy = true,
     config = function()
       return require "configs.overseer"
     end,
@@ -23,7 +20,7 @@ local plugins = {
       "nvimdev/guard-collection",
     },
     config = function()
-      return require "configs.guard"
+      require "configs.guard"
     end,
   },
   {
